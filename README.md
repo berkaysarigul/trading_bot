@@ -1,40 +1,66 @@
-# Gelişmiş Multi-Asset RL Trading Bot
+# Crypto Trading Bot
+
+Bu proje, çoklu kripto varlıklar için PPO + LSTM tabanlı, gelişmiş teknik göstergeler ve risk yönetimi içeren, modüler ve production-ready bir trading bot altyapısıdır.
 
 ## Özellikler
-- Çoklu varlık (N sembol) portföy yönetimi
-- Lookback window ile geçmiş teknik veri kullanımı
-- Continuous action space (her varlık için -1 ile +1 arası)
-- Teknik göstergeler: Close, MA10, EMA20, MACD
-- PPO ajanı ile eğitim (Stable-Baselines3)
-- VecNormalize, SubprocVecEnv, EvalCallback, StopTrainingOnNoModelImprovement
-- Eğitim ve test ayrımı, portföy büyüklüğü loglama ve görselleştirme
+- Binance API ile gerçek zamanlı veri ve işlem desteği
+- Çoklu coin ve çoklu timeframe desteği
+- Gelişmiş teknik göstergeler (RSI, MACD, Bollinger Bands, VWAP, ATR, vb.)
+- Market cap ağırlıklandırması, Fear & Greed, sosyal/news sentiment
+- PPO, LSTM, Multi-head Attention, Ensemble model desteği
+- Gelişmiş risk yönetimi (stop-loss, take-profit, VaR, correlation, slippage, likidite)
+- Backtest, walk-forward, Monte Carlo ve stress test
+- Streamlit dashboard, Telegram/Discord alert, otomatik rapor
+- Paper trading ve gerçek trade desteği
+- Docker ile kolay deployment
+- Otomatik unit testler
+
+## Klasör Yapısı
+```
+crypto_trading_bot/
+  ├── config/
+  ├── data/
+  ├── environments/
+  ├── models/
+  ├── monitoring/
+  ├── trading/
+  ├── utils/
+  ├── main.py
+  ├── Dockerfile
+  └── start.sh
+
+tests/
+README.md
+requirements.txt
+```
 
 ## Kurulum
 ```bash
 pip install -r requirements.txt
 ```
-
-## Eğitim
+veya Docker ile:
 ```bash
-python train_multi_asset.py
+cd crypto_trading_bot
+# API key'lerinizi .env veya start.sh ile girin
+docker build -t crypto-bot .
+docker run -e BINANCE_API_KEY=xxx -e BINANCE_API_SECRET=yyy crypto-bot
 ```
 
-## Test
+## Kullanım
+- `main.py` ile veri çekme, feature engineering, backtest ve dashboard otomatik çalışır.
+- Kendi modelinizi eğitmek için PPO/LSTM/Attention modellerini ve RL eğitim döngüsünü kullanabilirsiniz.
+- Paper trading ve gerçek trade için `LiveTrader` modülünü kullanın.
+- Tüm testleri çalıştırmak için:
 ```bash
-python test_multi_asset.py
+python -m unittest discover tests
 ```
 
-- Test sonrası `data/portfolio_log.csv` ve `data/portfolio_balance.png` dosyaları oluşur.
+## API Key Ayarları
+- `crypto_trading_bot/config/api_config.py` dosyasına veya environment variable olarak girin.
 
-## Dosya Yapısı
-- `envs/multi_asset_env.py`: Gelişmiş RL ortamı
-- `utils/data_utils.py`: Veri çekme, teknik indikatör, scaler
-- `train_multi_asset.py`: PPO ile eğitim
-- `test_multi_asset.py`: Eğitimli ajan ile test ve görselleştirme
-- `requirements.txt`: Gereksinimler
-- `data/`: Log, model ve çıktı dosyaları
+## Uyarı
+- Gerçek trade öncesi mutlaka paper trading ile uzun süre test yapın!
+- API anahtarlarınızı kimseyle paylaşmayın.
 
-## Notlar
-- Matplotlib backend olarak `Agg` kullanılır, GUI gerekmez.
-- Tüm semboller aynı tarih aralığında hizalanır.
-- Reward fonksiyonu: portföy değer değişimi 
+## Lisans
+MIT 
