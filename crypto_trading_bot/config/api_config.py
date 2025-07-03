@@ -1,0 +1,3 @@
+BINANCE_API_KEY = "YOUR_API_KEY"
+BINANCE_API_SECRET = "YOUR_API_SECRET"
+FEAR_GREED_API = "https://api.alternative.me/fng/" 
