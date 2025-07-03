@@ -1,105 +1,99 @@
+# multi_asset_env.py
 import gymnasium as gym
 from gymnasium import spaces
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
+
 class MultiAssetTradingEnv(gym.Env):
-    def __init__(self, df_dict, initial_balance=100000, commission_rate=0.001, max_position_size=0.95, lookback_window_size=10):
-        super().__init__()
-        self.symbols = list(df_dict.keys())
-        self.n_assets = len(self.symbols)
-        self.dfs = df_dict
-        self.initial_balance = initial_balance
-        self.commission_rate = commission_rate
-        self.max_position_size = max_position_size
+    def __init__(self, dfs, lookback_window_size=10, initial_balance=10000):
+        super(MultiAssetTradingEnv, self).__init__()
+        self.symbols = list(dfs.keys())
+        self.dfs = dfs
         self.lookback_window_size = lookback_window_size
-        self.current_step = 0
-        self.balance = initial_balance
-        self.positions = np.zeros(self.n_assets, dtype=np.float32)  # Her varlık için pozisyon oranı (0-1)
-        self.entry_prices = np.zeros(self.n_assets, dtype=np.float32)
-        self.scalers = {}
+        self.initial_balance = initial_balance
+
+        self.current_step = None
+        self.balance = None
+        self.positions = None
+        self.prices = None
+
+        # Observation: for each symbol: [Close, MA, EMA, MACD] * lookback
+        self.obs_cols = {}
+        for symbol in self.symbols:
+            self.obs_cols[symbol] = [f'Close_{symbol}', f'MA10_{symbol}', f'EMA20_{symbol}', f'MACD_{symbol}']
+
+        obs_len = len(self.obs_cols[self.symbols[0]]) * len(self.symbols) * self.lookback_window_size
+        obs_len += len(self.symbols)  # positions
+        obs_len += 1  # balance
+
+        self.observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(obs_len,), dtype=np.float32)
+        self.action_space = spaces.Box(low=-1, high=1, shape=(len(self.symbols),), dtype=np.float32)
+
+        self.scaler = StandardScaler()
         self._prepare_data()
-        self.action_space = spaces.Box(low=-1, high=1, shape=(self.n_assets,), dtype=np.float32)
-        obs_dim = self.n_assets * 4 * self.lookback_window_size + 1 + self.n_assets  # 4 teknik gösterge x lookback x varlık + bakiye + pozisyonlar
-        self.observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(obs_dim,), dtype=np.float32)
         self.reset()
 
     def _prepare_data(self):
-        # Her sembol için sadece gerekli teknik göstergeleri ve scaler'ı hazırla
-        self.obs_cols = {}
-        for i, symbol in enumerate(self.symbols):
-            df = self.dfs[symbol]
-            cols = [f'Close_{symbol}', f'MA10_{symbol}', f'EMA20_{symbol}', f'MACD_{symbol}']
-            self.obs_cols[symbol] = cols
-            self.scalers[symbol] = StandardScaler().fit(df[cols])
-        # Ortak tarihleri bul
-        self.dates = sorted(list(set.intersection(*[set(df.index) for df in self.dfs.values()])))
-        for symbol in self.symbols:
-            self.dfs[symbol] = self.dfs[symbol].loc[self.dates]
-        self.n_steps = len(self.dates)
+        common_dates = set(self.dfs[self.symbols[0]].index)
+        for df in self.dfs.values():
+            common_dates &= set(df.index)
+        self.dates = sorted(list(common_dates))
+        assert len(self.dates) > self.lookback_window_size, "Not enough data for lookback window!"
 
-    def reset(self, seed=None, options=None):
+    def reset(self, *, seed=None, options=None):
         self.current_step = self.lookback_window_size
         self.balance = self.initial_balance
-        self.positions = np.zeros(self.n_assets, dtype=np.float32)
-        self.entry_prices = np.zeros(self.n_assets, dtype=np.float32)
-        return self._next_observation(), {}
-
-    def _get_portfolio_value(self):
-        total = self.balance
-        for i, symbol in enumerate(self.symbols):
-            price = float(self.dfs[symbol].iloc[self.current_step][f'Close_{symbol}'])
-            total += self.positions[i] * price
-        return total
-
-    def _next_observation(self):
-        obs = []
-        for i, symbol in enumerate(self.symbols):
-            df = self.dfs[symbol]
-            cols = self.obs_cols[symbol]
-            # Lookback window
-            window = df.iloc[self.current_step - self.lookback_window_size:self.current_step][cols].values
-            window_scaled = self.scalers[symbol].transform(window)
-            obs.extend(window_scaled.flatten())
-        obs.append(self.balance)
-        obs.extend(self.positions)
-        return np.array(obs, dtype=np.float32)
+        self.positions = np.zeros(len(self.symbols))
+        obs = self._next_observation()
+        info = {'portfolio_value': self._get_portfolio_value(self._get_prices())}
+        return obs, info
 
     def step(self, actions):
+        prices = self._get_prices()
+        prev_value = self._get_portfolio_value(prices)
+
         actions = np.clip(actions, -1, 1)
-        prev_value = self._get_portfolio_value()
-        info = {}
-        # Aksiyonları normalize et (toplam mutlak değer 1'i geçmesin)
-        norm_actions = actions / (np.sum(np.abs(actions)) + 1e-8)
-        prices = np.array([float(self.dfs[symbol].iloc[self.current_step][f'Close_{symbol}']) for symbol in self.symbols])
-        # Her varlık için pozisyonu güncelle
-        for i, symbol in enumerate(self.symbols):
-            desired_position = norm_actions[i] * self.max_position_size  # -max..+max arası
-            current_position = self.positions[i]
-            price = prices[i]
-            # Satış
-            if desired_position < current_position:
-                sell_amount = current_position - desired_position
-                proceeds = sell_amount * price * (1 - self.commission_rate)
-                self.balance += proceeds
-                self.positions[i] -= sell_amount
-                if self.positions[i] < 1e-6:
-                    self.entry_prices[i] = 0.0
-            # Alış
-            elif desired_position > current_position:
-                buy_amount = desired_position - current_position
-                cost = buy_amount * price * (1 + self.commission_rate)
-                if self.balance >= cost:
-                    self.balance -= cost
-                    self.positions[i] += buy_amount
-                    if self.entry_prices[i] == 0.0:
-                        self.entry_prices[i] = price
+
+        for idx, action in enumerate(actions):
+            if action > 0:
+                buy_amount = self.balance * action
+                self.balance -= buy_amount
+                self.positions[idx] += buy_amount / prices[idx]
+            elif action < 0:
+                sell_amount = self.positions[idx] * abs(action)
+                self.balance += sell_amount * prices[idx]
+                self.positions[idx] -= sell_amount
+
         self.current_step += 1
-        done = self.current_step >= self.n_steps - 1
-        new_value = self._get_portfolio_value()
-        reward = (new_value - prev_value) / self.initial_balance
-        obs = self._next_observation()
-        info['portfolio_value'] = new_value
-        info['reward'] = reward
-        return obs, reward, done, False, info 
+        done = self.current_step >= len(self.dates) - 1
+        terminated = done
+        truncated = False
+        prices = self._get_prices()
+        current_value = self._get_portfolio_value(prices)
+        reward = current_value - prev_value
+
+        info = {'portfolio_value': current_value}
+
+        return self._next_observation(), reward, terminated, truncated, info
+
+    def _get_prices(self):
+        return np.array([
+            self.dfs[symbol].loc[self.dates[self.current_step], f'Close_{symbol}']
+            for symbol in self.symbols
+        ])
+
+    def _next_observation(self):
+        frames = []
+        for symbol in self.symbols:
+            df = self.dfs[symbol]
+            obs = df.iloc[self.current_step - self.lookback_window_size + 1: self.current_step + 1]
+            frames.append(obs[self.obs_cols[symbol]].values)
+        obs = np.concatenate(frames).flatten()
+        obs = np.append(obs, self.positions)
+        obs = np.append(obs, self.balance)
+        return obs.astype(np.float32)
+
+    def _get_portfolio_value(self, prices):
+        return self.balance + np.sum(self.positions * prices)

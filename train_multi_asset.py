@@ -1,3 +1,4 @@
+#train_multi_asset.py
 import os
 import numpy as np
 from stable_baselines3 import PPO
@@ -65,7 +66,7 @@ def main():
         )
     )
     model.learn(total_timesteps=TOTAL_TIMESTEPS, callback=eval_callback, tb_log_name="PPO_MultiAsset", progress_bar=True)
-    model.save(os.path.join(MODEL_DIR, "final_multiasset_model.zip"))
+    model.save(os.path.join(MODEL_DIR, "ppo_multi_asset_model"))
     train_env.save(os.path.join(MODEL_DIR, "vecnormalize.pkl"))
     print("\n✅ Eğitim tamamlandı ve model kaydedildi!")
 
