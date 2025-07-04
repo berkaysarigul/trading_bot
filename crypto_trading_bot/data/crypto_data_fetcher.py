@@ -1,21 +1,50 @@
 import ccxt
 import pandas as pd
-from config.api_config import BINANCE_API_KEY, BINANCE_API_SECRET
-from data.technical_indicators import add_technical_indicators
+from crypto_trading_bot.config.api_config import BINANCE_API_KEY, BINANCE_API_SECRET
+from crypto_trading_bot.data.technical_indicators import add_technical_indicators
 
 class CryptoDataFetcher:
     def __init__(self):
-        self.exchange = ccxt.binance({
-            'apiKey': BINANCE_API_KEY,
-            'secret': BINANCE_API_SECRET,
-            'enableRateLimit': True,
-        })
+        api_key = BINANCE_API_KEY if BINANCE_API_KEY != "YOUR_API_KEY" else None
+        api_secret = BINANCE_API_SECRET if BINANCE_API_SECRET != "YOUR_API_SECRET" else None
+        if api_key and api_secret:
+            self.exchange = ccxt.binance({
+                'apiKey': api_key,
+                'secret': api_secret,
+                'enableRateLimit': True,
+            })
+        else:
+            self.exchange = ccxt.binance({
+                'enableRateLimit': True,
+            })
 
-    def fetch_ohlcv(self, symbol, timeframe='1h', limit=1000):
-        data = self.exchange.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
-        df = pd.DataFrame(data, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+    def fetch_ohlcv(self, symbol, timeframe='1h', limit=1000, since=None):
+        all_data = []
+        fetch_limit = 1000  # Binance API tek seferde max 1000 bar döner
+        if since is None:
+            # En güncel barın timestamp'ini bulmak için bir defa çek
+            recent = self.exchange.fetch_ohlcv(symbol, timeframe=timeframe, limit=1)
+            if not recent or len(recent) == 0:
+                return pd.DataFrame(columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+            end_time = recent[-1][0]
+        else:
+            end_time = since
+        fetched = 0
+        while fetched < limit:
+            current_limit = min(fetch_limit, limit - fetched)
+            # Binance API'da 'since' parametresi başlangıç zamanıdır, bu yüzden geriye doğru çekmek için end_time'dan current_limit*bar arası çek
+            start_time = end_time - current_limit * self.exchange.parse_timeframe(timeframe) * 1000
+            data = self.exchange.fetch_ohlcv(symbol, timeframe=timeframe, limit=current_limit, since=int(start_time))
+            if not data or len(data) == 0:
+                break
+            all_data = data + all_data  # başa ekle, eskiye doğru
+            fetched += len(data)
+            if len(data) < current_limit:
+                break  # Daha fazla veri yok
+            end_time = data[0][0] - 1  # bir önceki bloğun başı
+        df = pd.DataFrame(all_data, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
         df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
-        return df
+        return df.tail(limit).reset_index(drop=True)
 
     def fetch_multi_asset_data(self, symbols, timeframes, limit=1000):
         all_data = {}

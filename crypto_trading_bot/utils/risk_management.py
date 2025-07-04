@@ -1,6 +1,34 @@
 import numpy as np
 import pandas as pd
 
+class RiskManager:
+    def __init__(self, max_position_size=0.1, max_daily_loss=0.05, stop_loss=0.02, take_profit=0.04):
+        self.max_position_size = max_position_size
+        self.max_daily_loss = max_daily_loss
+        self.stop_loss = stop_loss
+        self.take_profit = take_profit
+
+    def apply_stop_loss_take_profit(self, entry_price, current_price):
+        if current_price <= entry_price * (1 - self.stop_loss):
+            return 'stop_loss'
+        elif current_price >= entry_price * (1 + self.take_profit):
+            return 'take_profit'
+        else:
+            return 'hold'
+
+    def position_sizing(self, balance, risk_per_trade, stop_loss_pct):
+        return balance * risk_per_trade / stop_loss_pct
+
+    def max_drawdown_protection(self, portfolio_values, max_dd=0.15):
+        peak = portfolio_values[0]
+        for value in portfolio_values:
+            if value > peak:
+                peak = value
+            drawdown = (peak - value) / peak
+            if drawdown > max_dd:
+                return True  # Drawdown limiti aşıldı
+        return False
+
 def kelly_position_sizing(balance, win_rate, win_loss_ratio):
     kelly_fraction = win_rate - (1 - win_rate) / win_loss_ratio
     return max(0, min(balance * kelly_fraction, balance))

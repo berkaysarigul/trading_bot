@@ -43,40 +43,58 @@ class MultiAssetTradingEnv(gym.Env):
         assert len(self.dates) > self.lookback_window_size, "Not enough data for lookback window!"
 
     def reset(self, *, seed=None, options=None):
-        self.current_step = self.lookback_window_size
-        self.balance = self.initial_balance
-        self.positions = np.zeros(len(self.symbols))
-        obs = self._next_observation()
-        info = {'portfolio_value': self._get_portfolio_value(self._get_prices())}
-        return obs, info
+        try:
+            self.current_step = self.lookback_window_size
+            self.balance = self.initial_balance
+            self.positions = np.zeros(len(self.symbols))
+            obs = self._next_observation()
+            info = {'portfolio_value': self._get_portfolio_value(self._get_prices())}
+            print(f"[RESET] current_step: {self.current_step}, balance: {self.balance}, positions: {self.positions}")
+            print(f"[RESET] Observation shape: {obs.shape}, dtype: {obs.dtype}")
+            return obs, info
+        except Exception as e:
+            print(f"[RESET][EXCEPTION] {e}")
+            raise
 
     def step(self, actions):
-        prices = self._get_prices()
-        prev_value = self._get_portfolio_value(prices)
+        try:
+            prices = self._get_prices()
+            prev_value = self._get_portfolio_value(prices)
 
-        actions = np.clip(actions, -1, 1)
+            actions = np.clip(actions, -1, 1)
 
-        for idx, action in enumerate(actions):
-            if action > 0:
-                buy_amount = self.balance * action
-                self.balance -= buy_amount
-                self.positions[idx] += buy_amount / prices[idx]
-            elif action < 0:
-                sell_amount = self.positions[idx] * abs(action)
-                self.balance += sell_amount * prices[idx]
-                self.positions[idx] -= sell_amount
+            for idx, action in enumerate(actions):
+                if action > 0:
+                    buy_amount = self.balance * action
+                    self.balance -= buy_amount
+                    self.positions[idx] += buy_amount / prices[idx]
+                elif action < 0:
+                    sell_amount = self.positions[idx] * abs(action)
+                    self.balance += sell_amount * prices[idx]
+                    self.positions[idx] -= sell_amount
 
-        self.current_step += 1
-        done = self.current_step >= len(self.dates) - 1
-        terminated = done
-        truncated = False
-        prices = self._get_prices()
-        current_value = self._get_portfolio_value(prices)
-        reward = current_value - prev_value
+            self.current_step += 1
+            done = self.current_step >= len(self.dates) - 1
+            terminated = done
+            truncated = False
+            prices = self._get_prices()
+            current_value = self._get_portfolio_value(prices)
+            reward = current_value - prev_value
 
-        info = {'portfolio_value': current_value}
+            info = {'portfolio_value': current_value}
 
-        return self._next_observation(), reward, terminated, truncated, info
+            obs = self._next_observation()
+            if np.any(np.isnan(obs)) or np.any(np.isinf(obs)):
+                print(f"[STEP][WARNING] Observation contains NaN or Inf! {obs}")
+            if np.isnan(reward) or np.isinf(reward):
+                print(f"[STEP][WARNING] Reward is NaN or Inf! reward: {reward}")
+            print(f"[STEP] current_step: {self.current_step}, done: {done}, reward: {reward}")
+            print(f"[STEP] Observation shape: {obs.shape}, dtype: {obs.dtype}")
+            print(f"[STEP] positions: {self.positions}, balance: {self.balance}")
+            return obs, reward, terminated, truncated, info
+        except Exception as e:
+            print(f"[STEP][EXCEPTION] {e}")
+            raise
 
     def _get_prices(self):
         return np.array([
@@ -93,7 +111,10 @@ class MultiAssetTradingEnv(gym.Env):
         obs = np.concatenate(frames).flatten()
         obs = np.append(obs, self.positions)
         obs = np.append(obs, self.balance)
-        return obs.astype(np.float32)
+        obs = obs.astype(np.float32)
+        if np.any(np.isnan(obs)) or np.any(np.isinf(obs)):
+            print(f"[_NEXT_OBS][WARNING] Observation contains NaN or Inf! {obs}")
+        return obs
 
     def _get_portfolio_value(self, prices):
         return self.balance + np.sum(self.positions * prices)
