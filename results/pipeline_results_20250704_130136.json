@@ -1,0 +1,31 @@
+{
+  "data_preparation": {
+    "status": "success",
+    "data_shape": {
+      "BTC/USDT": {
+        "1h": [
+          756,
+          7
+        ]
+      },
+      "ETH/USDT": {
+        "1h": [
+          756,
+          7
+        ]
+      },
+      "BNB/USDT": {
+        "1h": [
+          756,
+          7
+        ]
+      }
+    },
+    "timestamp": "2025-07-04T13:01:35.817611"
+  },
+  "feature_engineering": {
+    "status": "failed",
+    "error": "'AdvancedFeatureEngineering' object has no attribute 'add_pattern_features'",
+    "timestamp": "2025-07-04T13:01:36.045091"
+  }
+}

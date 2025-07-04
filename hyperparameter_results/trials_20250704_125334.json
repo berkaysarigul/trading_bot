@@ -1,0 +1,1287 @@
+[
+  {
+    "number": 0,
+    "value": null,
+    "params": {
+      "learning_rate": 1.0405191363120589e-05,
+      "n_steps": 66,
+      "batch_size": 76,
+      "n_epochs": 11,
+      "gamma": 0.9872782036050111,
+      "gae_lambda": 0.8364756863760953,
+      "clip_range": 0.2582524689869653,
+      "ent_coef": 0.01387840429419423,
+      "vf_coef": 0.15597390601194255,
+      "max_grad_norm": 0.48013089382271157,
+      "risk_per_trade": 0.038367589622356015,
+      "commission": 0.0006655464890221875,
+      "lookback_window": 11
+    },
+    "user_attrs": {},
+    "state": "PRUNED"
+  },
+  {
+    "number": 1,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.004234142761433614,
+      "n_steps": 190,
+      "batch_size": 69,
+      "n_epochs": 17,
+      "gamma": 0.9061821476783214,
+      "gae_lambda": 0.9026717121237282,
+      "clip_range": 0.1422694287383377,
+      "ent_coef": 0.03791661831167694,
+      "vf_coef": 0.4471678846533723,
+      "max_grad_norm": 0.9128039345686285,
+      "risk_per_trade": 0.021559140963279932,
+      "commission": 0.0007650988708268625,
+      "lookback_window": 38,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 2,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.207579245706211e-05,
+      "n_steps": 202,
+      "batch_size": 40,
+      "n_epochs": 5,
+      "gamma": 0.9328384414615466,
+      "gae_lambda": 0.8585202426176368,
+      "clip_range": 0.12276535621270906,
+      "ent_coef": 0.006784682800845405,
+      "vf_coef": 0.7179880366173326,
+      "max_grad_norm": 0.5412573405833403,
+      "risk_per_trade": 0.044801907181317976,
+      "commission": 0.0017046779092597154,
+      "lookback_window": 10,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 3,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 1.7326476954211098e-05,
+      "n_steps": 147,
+      "batch_size": 98,
+      "n_epochs": 6,
+      "gamma": 0.9530078564502319,
+      "gae_lambda": 0.8408995948182645,
+      "clip_range": 0.14159032297158114,
+      "ent_coef": 0.0011448268781393508,
+      "vf_coef": 0.8522503295842835,
+      "max_grad_norm": 0.9122839317756707,
+      "risk_per_trade": 0.03771672740190551,
+      "commission": 0.0005301746368288173,
+      "lookback_window": 25,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 4,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.002476476579506026,
+      "n_steps": 235,
+      "batch_size": 65,
+      "n_epochs": 15,
+      "gamma": 0.914943652069568,
+      "gae_lambda": 0.9225763741700437,
+      "clip_range": 0.1640668765578775,
+      "ent_coef": 0.004123731363000103,
+      "vf_coef": 0.41138804560920816,
+      "max_grad_norm": 0.29509073003587727,
+      "risk_per_trade": 0.03697008022643583,
+      "commission": 0.001900499094514405,
+      "lookback_window": 38,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 5,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.00041674104730726936,
+      "n_steps": 104,
+      "batch_size": 95,
+      "n_epochs": 5,
+      "gamma": 0.950920822660142,
+      "gae_lambda": 0.8659032935425703,
+      "clip_range": 0.23588707891811198,
+      "ent_coef": 0.0024015514445470333,
+      "vf_coef": 0.8983278848095064,
+      "max_grad_norm": 0.9574437454113748,
+      "risk_per_trade": 0.012306336264402157,
+      "commission": 0.0017966050175222126,
+      "lookback_window": 41,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 6,
+    "value": null,
+    "params": {
+      "learning_rate": 0.00027363896483066966,
+      "n_steps": 47,
+      "batch_size": 132,
+      "n_epochs": 11,
+      "gamma": 0.9561968563921018,
+      "gae_lambda": 0.9547203143615637,
+      "clip_range": 0.2511873516420986,
+      "ent_coef": 0.001454335755247197,
+      "vf_coef": 0.7933583873973579,
+      "max_grad_norm": 0.3465567331907278,
+      "risk_per_trade": 0.02301410060049148,
+      "commission": 0.0016949462760297012,
+      "lookback_window": 18
+    },
+    "user_attrs": {},
+    "state": "PRUNED"
+  },
+  {
+    "number": 7,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.0017265861888680703,
+      "n_steps": 102,
+      "batch_size": 80,
+      "n_epochs": 16,
+      "gamma": 0.9461190158401763,
+      "gae_lambda": 0.8006725904259878,
+      "clip_range": 0.1287174446408447,
+      "ent_coef": 0.00875668530963575,
+      "vf_coef": 0.19952864518926877,
+      "max_grad_norm": 0.32912545003498533,
+      "risk_per_trade": 0.0477882798563888,
+      "commission": 0.0019438514475666722,
+      "lookback_window": 22,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 8,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.0003328140378220201,
+      "n_steps": 246,
+      "batch_size": 122,
+      "n_epochs": 20,
+      "gamma": 0.9239665304651634,
+      "gae_lambda": 0.9203711985670214,
+      "clip_range": 0.10283339553730997,
+      "ent_coef": 0.017486862958675575,
+      "vf_coef": 0.9076733005628422,
+      "max_grad_norm": 0.34543220853001333,
+      "risk_per_trade": 0.03681414087708435,
+      "commission": 0.0011143445303837024,
+      "lookback_window": 53,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 9,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.0002279891385888191,
+      "n_steps": 201,
+      "batch_size": 107,
+      "n_epochs": 13,
+      "gamma": 0.9224894466590813,
+      "gae_lambda": 0.851463549312888,
+      "clip_range": 0.28375724860191043,
+      "ent_coef": 0.0036654493399473744,
+      "vf_coef": 0.8457288916720157,
+      "max_grad_norm": 0.27059801340880263,
+      "risk_per_trade": 0.02427272641259169,
+      "commission": 0.0005095139946933103,
+      "lookback_window": 49,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 10,
+    "value": null,
+    "params": {
+      "learning_rate": 1.2050447893898065e-05,
+      "n_steps": 36,
+      "batch_size": 66,
+      "n_epochs": 13,
+      "gamma": 0.983706625139471,
+      "gae_lambda": 0.8007806017093944,
+      "clip_range": 0.22631633910534932,
+      "ent_coef": 0.015943068323263265,
+      "vf_coef": 0.3091098224717766,
+      "max_grad_norm": 0.2858079476917702,
+      "risk_per_trade": 0.03986722347586079,
+      "commission": 0.0014910608069149047,
+      "lookback_window": 27
+    },
+    "user_attrs": {},
+    "state": "PRUNED"
+  },
+  {
+    "number": 11,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.0018937214796001195,
+      "n_steps": 239,
+      "batch_size": 91,
+      "n_epochs": 11,
+      "gamma": 0.9961994085140932,
+      "gae_lambda": 0.8545511615517023,
+      "clip_range": 0.20208058811969443,
+      "ent_coef": 0.001784995253090553,
+      "vf_coef": 0.6936816653032255,
+      "max_grad_norm": 0.6691606670292013,
+      "risk_per_trade": 0.031669711949717815,
+      "commission": 0.00114407484595267,
+      "lookback_window": 34,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 12,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 1.788221051286037e-05,
+      "n_steps": 44,
+      "batch_size": 26,
+      "n_epochs": 11,
+      "gamma": 0.9713113087001511,
+      "gae_lambda": 0.9328322050552567,
+      "clip_range": 0.26027627696188527,
+      "ent_coef": 0.020804548852740246,
+      "vf_coef": 0.2957472482530671,
+      "max_grad_norm": 0.7557038547810292,
+      "risk_per_trade": 0.03316190013294258,
+      "commission": 0.0019648576633655096,
+      "lookback_window": 56,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 13,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.0007956293598382697,
+      "n_steps": 238,
+      "batch_size": 36,
+      "n_epochs": 9,
+      "gamma": 0.9270648007908846,
+      "gae_lambda": 0.9164439208674495,
+      "clip_range": 0.2885068265759535,
+      "ent_coef": 0.0016271275323183993,
+      "vf_coef": 0.3540526349929174,
+      "max_grad_norm": 0.1699859473027493,
+      "risk_per_trade": 0.02977800698761516,
+      "commission": 0.0019522445556324206,
+      "lookback_window": 43,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 14,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 6.775838465370331e-05,
+      "n_steps": 159,
+      "batch_size": 73,
+      "n_epochs": 13,
+      "gamma": 0.9598414767934309,
+      "gae_lambda": 0.9539400561606832,
+      "clip_range": 0.2715344134847951,
+      "ent_coef": 0.08801230067982543,
+      "vf_coef": 0.7220131913192923,
+      "max_grad_norm": 0.5383133173801715,
+      "risk_per_trade": 0.04410988517901377,
+      "commission": 0.0016633290950971175,
+      "lookback_window": 50,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 15,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.009112094065381948,
+      "n_steps": 98,
+      "batch_size": 97,
+      "n_epochs": 19,
+      "gamma": 0.9656576458360973,
+      "gae_lambda": 0.8959727733283098,
+      "clip_range": 0.23445918118217685,
+      "ent_coef": 0.02843135827785598,
+      "vf_coef": 0.5037779711793382,
+      "max_grad_norm": 0.5659682360945646,
+      "risk_per_trade": 0.02813786332398025,
+      "commission": 0.0018499576888851088,
+      "lookback_window": 64,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 16,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.0026747416547102535,
+      "n_steps": 180,
+      "batch_size": 118,
+      "n_epochs": 5,
+      "gamma": 0.9743134220490771,
+      "gae_lambda": 0.8815386951207362,
+      "clip_range": 0.23217230955373508,
+      "ent_coef": 0.007215639945438616,
+      "vf_coef": 0.9019688440955252,
+      "max_grad_norm": 0.7316195169046992,
+      "risk_per_trade": 0.017193830768343476,
+      "commission": 0.0006201316588991324,
+      "lookback_window": 18,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 17,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.0013346594047727416,
+      "n_steps": 138,
+      "batch_size": 121,
+      "n_epochs": 9,
+      "gamma": 0.9051006487333644,
+      "gae_lambda": 0.9752466367107343,
+      "clip_range": 0.20008654946984478,
+      "ent_coef": 0.021797149575154724,
+      "vf_coef": 0.694045756441953,
+      "max_grad_norm": 0.9075139463613003,
+      "risk_per_trade": 0.030038692745883534,
+      "commission": 0.001699830389589655,
+      "lookback_window": 23,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 18,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.000539625122038159,
+      "n_steps": 153,
+      "batch_size": 39,
+      "n_epochs": 19,
+      "gamma": 0.9284709800494821,
+      "gae_lambda": 0.8623325365430083,
+      "clip_range": 0.11231435605523572,
+      "ent_coef": 0.013731900584139967,
+      "vf_coef": 0.887975474912482,
+      "max_grad_norm": 0.1244442066288485,
+      "risk_per_trade": 0.026800805506492616,
+      "commission": 0.0008482750699984026,
+      "lookback_window": 18,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 19,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.008330738774738295,
+      "n_steps": 206,
+      "batch_size": 45,
+      "n_epochs": 17,
+      "gamma": 0.9335145272202146,
+      "gae_lambda": 0.8872617010334778,
+      "clip_range": 0.1660446153265635,
+      "ent_coef": 0.04005225441454096,
+      "vf_coef": 0.579408938419347,
+      "max_grad_norm": 0.6286595517755282,
+      "risk_per_trade": 0.01949133308662163,
+      "commission": 0.0013452415096810808,
+      "lookback_window": 65,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 20,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.007747088941069453,
+      "n_steps": 199,
+      "batch_size": 54,
+      "n_epochs": 17,
+      "gamma": 0.9394836951359666,
+      "gae_lambda": 0.8842533441522453,
+      "clip_range": 0.1676822376929604,
+      "ent_coef": 0.039971624079798415,
+      "vf_coef": 0.5189685560203258,
+      "max_grad_norm": 0.6398761700680482,
+      "risk_per_trade": 0.019447444821015566,
+      "commission": 0.001444688953599663,
+      "lookback_window": 64,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 21,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 8.026418477627095e-05,
+      "n_steps": 207,
+      "batch_size": 53,
+      "n_epochs": 16,
+      "gamma": 0.9382459839291768,
+      "gae_lambda": 0.8948366811534632,
+      "clip_range": 0.16531167201463495,
+      "ent_coef": 0.04743267503563512,
+      "vf_coef": 0.5596790007355263,
+      "max_grad_norm": 0.8273479502944241,
+      "risk_per_trade": 0.018666247512709958,
+      "commission": 0.0013145919729084965,
+      "lookback_window": 31,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 22,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 6.039405005138319e-05,
+      "n_steps": 204,
+      "batch_size": 50,
+      "n_epochs": 16,
+      "gamma": 0.9405105529959089,
+      "gae_lambda": 0.8900769406327165,
+      "clip_range": 0.16644389222178813,
+      "ent_coef": 0.0546584448502421,
+      "vf_coef": 0.5605449161868075,
+      "max_grad_norm": 0.7888407799756927,
+      "risk_per_trade": 0.01919113413122967,
+      "commission": 0.001381744749226068,
+      "lookback_window": 31,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 23,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 5.6670549646267504e-05,
+      "n_steps": 206,
+      "batch_size": 54,
+      "n_epochs": 16,
+      "gamma": 0.9403636214392314,
+      "gae_lambda": 0.8893527232780042,
+      "clip_range": 0.16417829397256564,
+      "ent_coef": 0.04393221810235034,
+      "vf_coef": 0.5978111603805829,
+      "max_grad_norm": 0.851090029182581,
+      "risk_per_trade": 0.018737052841670064,
+      "commission": 0.0014236625582634515,
+      "lookback_window": 31,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 24,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 7.269385634042624e-05,
+      "n_steps": 207,
+      "batch_size": 50,
+      "n_epochs": 17,
+      "gamma": 0.939945105607208,
+      "gae_lambda": 0.8841646967180892,
+      "clip_range": 0.16700254900506217,
+      "ent_coef": 0.04608251269602279,
+      "vf_coef": 0.5538050695517491,
+      "max_grad_norm": 0.8304107599308508,
+      "risk_per_trade": 0.016669215214859902,
+      "commission": 0.0014353227757232844,
+      "lookback_window": 11,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 25,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 8.372471211159277e-05,
+      "n_steps": 206,
+      "batch_size": 53,
+      "n_epochs": 7,
+      "gamma": 0.9028649303008126,
+      "gae_lambda": 0.8213379666553358,
+      "clip_range": 0.16704494004495027,
+      "ent_coef": 0.053324644452903594,
+      "vf_coef": 0.9946043830393201,
+      "max_grad_norm": 0.8223276422332515,
+      "risk_per_trade": 0.011859756739447832,
+      "commission": 0.0009003565405642485,
+      "lookback_window": 33,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 26,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 7.268652206506415e-05,
+      "n_steps": 212,
+      "batch_size": 53,
+      "n_epochs": 8,
+      "gamma": 0.9034856079122278,
+      "gae_lambda": 0.8247543560614783,
+      "clip_range": 0.1617701273562882,
+      "ent_coef": 0.05728998960894404,
+      "vf_coef": 0.5792189040668372,
+      "max_grad_norm": 0.8364788702877446,
+      "risk_per_trade": 0.049045597670602716,
+      "commission": 0.000933537219834637,
+      "lookback_window": 32,
+      "net_arch": [
+        128,
+        128
+      ],
+      "activation_fn": "relu"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 27,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.713713011639975e-05,
+      "n_steps": 133,
+      "batch_size": 19,
+      "n_epochs": 7,
+      "gamma": 0.9039227693148087,
+      "gae_lambda": 0.8209040417471583,
+      "clip_range": 0.14109504805863954,
+      "ent_coef": 0.08196224558919493,
+      "vf_coef": 0.9821928749508784,
+      "max_grad_norm": 0.8528259256486564,
+      "risk_per_trade": 0.04444806943447082,
+      "commission": 0.0008798204084517028,
+      "lookback_window": 31,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 28,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.634510788408828e-05,
+      "n_steps": 130,
+      "batch_size": 18,
+      "n_epochs": 7,
+      "gamma": 0.9007606102098438,
+      "gae_lambda": 0.8271290299482785,
+      "clip_range": 0.13802650995519633,
+      "ent_coef": 0.09547663160227354,
+      "vf_coef": 0.6100774485202463,
+      "max_grad_norm": 0.8022680496041374,
+      "risk_per_trade": 0.043508144548388056,
+      "commission": 0.0009022778714425619,
+      "lookback_window": 31,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 29,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.685204752258502e-05,
+      "n_steps": 177,
+      "batch_size": 23,
+      "n_epochs": 7,
+      "gamma": 0.9032984300904947,
+      "gae_lambda": 0.8140855951315773,
+      "clip_range": 0.13907604612076438,
+      "ent_coef": 0.09202496057813764,
+      "vf_coef": 0.9855305302966806,
+      "max_grad_norm": 0.8670573149846222,
+      "risk_per_trade": 0.049962416134211846,
+      "commission": 0.0008839149371009288,
+      "lookback_window": 32,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 30,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.622628913790509e-05,
+      "n_steps": 129,
+      "batch_size": 16,
+      "n_epochs": 7,
+      "gamma": 0.9051353988689056,
+      "gae_lambda": 0.8256644034849271,
+      "clip_range": 0.13986718677498416,
+      "ent_coef": 0.07741272925341339,
+      "vf_coef": 0.9893984995063253,
+      "max_grad_norm": 0.8541245083758626,
+      "risk_per_trade": 0.04404220598553531,
+      "commission": 0.000878082283088688,
+      "lookback_window": 10,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 31,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.618962018903308e-05,
+      "n_steps": 131,
+      "batch_size": 25,
+      "n_epochs": 7,
+      "gamma": 0.9035391231426302,
+      "gae_lambda": 0.8287976759029071,
+      "clip_range": 0.13907368855208085,
+      "ent_coef": 0.09990955638065774,
+      "vf_coef": 0.9975070103340578,
+      "max_grad_norm": 0.8420162273726336,
+      "risk_per_trade": 0.04981603944857505,
+      "commission": 0.0009038357909536397,
+      "lookback_window": 10,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 32,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.9161501998710545e-05,
+      "n_steps": 172,
+      "batch_size": 19,
+      "n_epochs": 7,
+      "gamma": 0.9005922154065275,
+      "gae_lambda": 0.8278244580414893,
+      "clip_range": 0.13981740078786298,
+      "ent_coef": 0.0053240594651587075,
+      "vf_coef": 0.5805976177147065,
+      "max_grad_norm": 0.8692322436649772,
+      "risk_per_trade": 0.04428947278514326,
+      "commission": 0.0007806569337571827,
+      "lookback_window": 10,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 33,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.70107318793209e-05,
+      "n_steps": 175,
+      "batch_size": 50,
+      "n_epochs": 7,
+      "gamma": 0.9009327668437208,
+      "gae_lambda": 0.8280168936301466,
+      "clip_range": 0.13857720766998577,
+      "ent_coef": 0.0010571669632433263,
+      "vf_coef": 0.63137961110344,
+      "max_grad_norm": 0.825831233890438,
+      "risk_per_trade": 0.04892897352567467,
+      "commission": 0.0009042675497386967,
+      "lookback_window": 10,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 34,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.960955893561013e-05,
+      "n_steps": 176,
+      "batch_size": 21,
+      "n_epochs": 7,
+      "gamma": 0.9068278233397953,
+      "gae_lambda": 0.8265017740806476,
+      "clip_range": 0.13892827824660176,
+      "ent_coef": 0.08029216671705364,
+      "vf_coef": 0.9835374236314717,
+      "max_grad_norm": 0.8553795669196964,
+      "risk_per_trade": 0.04904614399700372,
+      "commission": 0.0008347727842856565,
+      "lookback_window": 31,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 35,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.970618096399634e-05,
+      "n_steps": 130,
+      "batch_size": 22,
+      "n_epochs": 7,
+      "gamma": 0.9119967938595444,
+      "gae_lambda": 0.8223598966138642,
+      "clip_range": 0.14104596092117544,
+      "ent_coef": 0.001092043237191427,
+      "vf_coef": 0.9872215047950528,
+      "max_grad_norm": 0.882000940981573,
+      "risk_per_trade": 0.04902414095310101,
+      "commission": 0.0007405817285000006,
+      "lookback_window": 28,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 36,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.74640586965039e-05,
+      "n_steps": 178,
+      "batch_size": 22,
+      "n_epochs": 7,
+      "gamma": 0.9022250525555117,
+      "gae_lambda": 0.8319397907221413,
+      "clip_range": 0.13926769989459917,
+      "ent_coef": 0.0010382778358957996,
+      "vf_coef": 0.6212358854432305,
+      "max_grad_norm": 0.8380030079575307,
+      "risk_per_trade": 0.04395763769229549,
+      "commission": 0.0008768425579160893,
+      "lookback_window": 10,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 37,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.597355908708541e-05,
+      "n_steps": 169,
+      "batch_size": 22,
+      "n_epochs": 7,
+      "gamma": 0.9054077841150447,
+      "gae_lambda": 0.8276832819154849,
+      "clip_range": 0.13792695569546476,
+      "ent_coef": 0.005565960255007314,
+      "vf_coef": 0.973415279204586,
+      "max_grad_norm": 0.9927725557416512,
+      "risk_per_trade": 0.049751728323690916,
+      "commission": 0.0008847503613904215,
+      "lookback_window": 11,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 38,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 3.243228150251078e-05,
+      "n_steps": 129,
+      "batch_size": 89,
+      "n_epochs": 7,
+      "gamma": 0.9021833129886216,
+      "gae_lambda": 0.8299021930440424,
+      "clip_range": 0.13345476387450678,
+      "ent_coef": 0.0011017545363336014,
+      "vf_coef": 0.9770198168830546,
+      "max_grad_norm": 0.9661183401045315,
+      "risk_per_trade": 0.043075718360869084,
+      "commission": 0.000925046910459549,
+      "lookback_window": 10,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 39,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 2.8077396515233105e-05,
+      "n_steps": 130,
+      "batch_size": 22,
+      "n_epochs": 7,
+      "gamma": 0.9001668050031044,
+      "gae_lambda": 0.8208332290862914,
+      "clip_range": 0.1328535729614225,
+      "ent_coef": 0.0010499909753657064,
+      "vf_coef": 0.9651331510293328,
+      "max_grad_norm": 0.998829536118094,
+      "risk_per_trade": 0.04964065047013985,
+      "commission": 0.0009662376070011211,
+      "lookback_window": 11,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 40,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.00016084884902098958,
+      "n_steps": 172,
+      "batch_size": 87,
+      "n_epochs": 6,
+      "gamma": 0.9138419369615058,
+      "gae_lambda": 0.8437007128912795,
+      "clip_range": 0.13708415387070708,
+      "ent_coef": 0.0010404338104509942,
+      "vf_coef": 0.4442823985965398,
+      "max_grad_norm": 0.9990829738249372,
+      "risk_per_trade": 0.04243393927155224,
+      "commission": 0.0007863772239045643,
+      "lookback_window": 11,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 41,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 2.6707296983129905e-05,
+      "n_steps": 174,
+      "batch_size": 88,
+      "n_epochs": 6,
+      "gamma": 0.9142984921519021,
+      "gae_lambda": 0.8441119549630198,
+      "clip_range": 0.1370226559102679,
+      "ent_coef": 0.0010145124688837358,
+      "vf_coef": 0.7823229641037217,
+      "max_grad_norm": 0.4455992263733346,
+      "risk_per_trade": 0.042236807207339876,
+      "commission": 0.0007256503412221384,
+      "lookback_window": 14,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 42,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 2.5986354313550584e-05,
+      "n_steps": 172,
+      "batch_size": 86,
+      "n_epochs": 5,
+      "gamma": 0.9157563632802115,
+      "gae_lambda": 0.8379473396044951,
+      "clip_range": 0.14188265998441552,
+      "ent_coef": 0.0010655485341033207,
+      "vf_coef": 0.7688441662713619,
+      "max_grad_norm": 0.9978496830428799,
+      "risk_per_trade": 0.042041278320760274,
+      "commission": 0.0007368845361703346,
+      "lookback_window": 14,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 43,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 2.0377937431202994e-05,
+      "n_steps": 177,
+      "batch_size": 80,
+      "n_epochs": 5,
+      "gamma": 0.9151466200144731,
+      "gae_lambda": 0.8404621931260096,
+      "clip_range": 0.12255073800680442,
+      "ent_coef": 0.001057186705974587,
+      "vf_coef": 0.7638666938730618,
+      "max_grad_norm": 0.4322073581743987,
+      "risk_per_trade": 0.04064641199498061,
+      "commission": 0.0007216604023580468,
+      "lookback_window": 11,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 44,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.00015520078157375863,
+      "n_steps": 172,
+      "batch_size": 86,
+      "n_epochs": 6,
+      "gamma": 0.9131155949494955,
+      "gae_lambda": 0.8419813142094864,
+      "clip_range": 0.12481673247540911,
+      "ent_coef": 0.001018354205571723,
+      "vf_coef": 0.4512285111510141,
+      "max_grad_norm": 0.48001663344980866,
+      "risk_per_trade": 0.04038717396746468,
+      "commission": 0.0007538955797009415,
+      "lookback_window": 11,
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 45,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.004582050519913596,
+      "n_steps": 225,
+      "batch_size": 68,
+      "n_epochs": 5,
+      "gamma": 0.9170070724755357,
+      "gae_lambda": 0.9085345052250209,
+      "clip_range": 0.18574132575469238,
+      "ent_coef": 0.004885288170006029,
+      "vf_coef": 0.4545417739621608,
+      "max_grad_norm": 0.9785315795002746,
+      "risk_per_trade": 0.03503844318293115,
+      "commission": 0.0007205355419497811,
+      "lookback_window": 39,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 46,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.004608812248954508,
+      "n_steps": 255,
+      "batch_size": 63,
+      "n_epochs": 5,
+      "gamma": 0.9159357641232342,
+      "gae_lambda": 0.8458468315767692,
+      "clip_range": 0.18271369813500551,
+      "ent_coef": 0.002948426251176073,
+      "vf_coef": 0.44554184298439364,
+      "max_grad_norm": 0.9566077779372434,
+      "risk_per_trade": 0.036266498586277944,
+      "commission": 0.0005149101849232363,
+      "lookback_window": 38,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 47,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.00425433943663976,
+      "n_steps": 264,
+      "batch_size": 65,
+      "n_epochs": 5,
+      "gamma": 0.9139003033525337,
+      "gae_lambda": 0.8449629107936476,
+      "clip_range": 0.18433245474942914,
+      "ent_coef": 0.004271549421122047,
+      "vf_coef": 0.39308154964329195,
+      "max_grad_norm": 0.9959016006973669,
+      "risk_per_trade": 0.03530859036257365,
+      "commission": 0.0006881728191992392,
+      "lookback_window": 39,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 48,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.0050124596179459665,
+      "n_steps": 232,
+      "batch_size": 65,
+      "n_epochs": 5,
+      "gamma": 0.9165461182448891,
+      "gae_lambda": 0.8440339075497798,
+      "clip_range": 0.18587324681339112,
+      "ent_coef": 0.0027029416735637676,
+      "vf_coef": 0.4170869684174907,
+      "max_grad_norm": 0.9926258959712181,
+      "risk_per_trade": 0.038297978262596774,
+      "commission": 0.0007028368516628534,
+      "lookback_window": 39,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  },
+  {
+    "number": 49,
+    "value": -Infinity,
+    "params": {
+      "learning_rate": 0.004412419343619467,
+      "n_steps": 260,
+      "batch_size": 64,
+      "n_epochs": 5,
+      "gamma": 0.9109376621919895,
+      "gae_lambda": 0.8441883740017714,
+      "clip_range": 0.1847517653687726,
+      "ent_coef": 0.0030918765826282416,
+      "vf_coef": 0.41354693852606256,
+      "max_grad_norm": 0.981633940468086,
+      "risk_per_trade": 0.03640790835830795,
+      "commission": 0.0005075832990065253,
+      "lookback_window": 40,
+      "net_arch": [
+        256,
+        256
+      ],
+      "activation_fn": "tanh"
+    },
+    "user_attrs": {},
+    "state": "COMPLETE"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "data_preparation": {
+    "status": "success",
+    "data_shape": {
+      "BTCUSDT": {
+        "1h": [
+          150,
+          7
+        ]
+      },
+      "ETHUSDT": {
+        "1h": [
+          150,
+          7
+        ]
+      },
+      "BNBUSDT": {
+        "1h": [
+          150,
+          7
+        ]
+      }
+    },
+    "timestamp": "2025-07-04T10:39:25.926616"
+  },
+  "feature_engineering": {
+    "status": "failed",
+    "error": "AdvancedFeatureEngineering.__init__() got an unexpected keyword argument 'lookback_window'",
+    "timestamp": "2025-07-04T10:39:25.938931"
+  }
+}

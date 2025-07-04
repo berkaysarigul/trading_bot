@@ -1,0 +1,31 @@
+{
+  "data_preparation": {
+    "status": "success",
+    "data_shape": {
+      "BTCUSDT": {
+        "1h": [
+          150,
+          7
+        ]
+      },
+      "ETHUSDT": {
+        "1h": [
+          150,
+          7
+        ]
+      },
+      "BNBUSDT": {
+        "1h": [
+          150,
+          7
+        ]
+      }
+    },
+    "timestamp": "2025-07-04T10:48:08.547595"
+  },
+  "feature_engineering": {
+    "status": "failed",
+    "error": "'NoneType' object has no attribute 'shape'",
+    "timestamp": "2025-07-04T10:48:08.869671"
+  }
+}

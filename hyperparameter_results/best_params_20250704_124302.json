@@ -1,0 +1,25 @@
+{
+  "best_params": {
+    "learning_rate": 0.0005909176299299914,
+    "n_steps": 239,
+    "batch_size": 49,
+    "n_epochs": 19,
+    "gamma": 0.9914579130139967,
+    "gae_lambda": 0.8773045888088941,
+    "clip_range": 0.24444883530206807,
+    "ent_coef": 0.0016965703794806013,
+    "vf_coef": 0.24238465911047685,
+    "max_grad_norm": 0.20256788456412111,
+    "risk_per_trade": 0.026868300051888984,
+    "commission": 0.0019496498012824754,
+    "lookback_window": 25,
+    "net_arch": [
+      256,
+      256
+    ],
+    "activation_fn": "tanh"
+  },
+  "best_score": -Infinity,
+  "n_trials": 50,
+  "timestamp": "20250704_124302"
+}

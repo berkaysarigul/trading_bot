@@ -1,0 +1,7 @@
+{
+  "data_preparation": {
+    "status": "failed",
+    "error": "'DataPreparation' object has no attribute 'validate_data'",
+    "timestamp": "2025-07-04T10:33:16.080875"
+  }
+}

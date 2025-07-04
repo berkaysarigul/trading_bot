@@ -1,0 +1,24 @@
+{
+  "best_params": {
+    "learning_rate": 4.182628599648735e-05,
+    "n_steps": 1024,
+    "batch_size": 64,
+    "n_epochs": 16,
+    "gamma": 0.9229570219001845,
+    "gae_lambda": 0.9832026146225495,
+    "clip_range": 0.10504371288515502,
+    "ent_coef": 0.015018729239033754,
+    "vf_coef": 0.24549990282689033,
+    "max_grad_norm": 0.507740586245805,
+    "hidden_size": 128,
+    "n_layers": 3,
+    "lstm_hidden_size": 256,
+    "n_lstm_layers": 1,
+    "dropout": 0.11579303399585701,
+    "risk_per_trade": 0.04531564774956314,
+    "commission": 0.0016685184133648557
+  },
+  "best_score": -Infinity,
+  "n_trials": 50,
+  "timestamp": "20250704_110042"
+}

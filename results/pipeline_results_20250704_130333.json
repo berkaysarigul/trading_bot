@@ -1,0 +1,31 @@
+{
+  "data_preparation": {
+    "status": "success",
+    "data_shape": {
+      "BTC/USDT": {
+        "1h": [
+          756,
+          7
+        ]
+      },
+      "ETH/USDT": {
+        "1h": [
+          756,
+          7
+        ]
+      },
+      "BNB/USDT": {
+        "1h": [
+          756,
+          7
+        ]
+      }
+    },
+    "timestamp": "2025-07-04T13:03:32.860776"
+  },
+  "feature_engineering": {
+    "status": "failed",
+    "error": "BTC/USDT 1h: float olmayan kolonlar: ['timestamp', 'fear_greed']",
+    "timestamp": "2025-07-04T13:03:33.073744"
+  }
+}

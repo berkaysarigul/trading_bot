@@ -1,0 +1,7 @@
+{
+  "data_preparation": {
+    "status": "failed",
+    "error": "DataPreparation.__init__() got an unexpected keyword argument 'symbols'",
+    "timestamp": "2025-07-04T10:28:02.530053"
+  }
+}

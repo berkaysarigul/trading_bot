@@ -1,0 +1,96 @@
+{
+  "data_preparation": {
+    "status": "success",
+    "data_shape": {
+      "BTCUSDT": {
+        "1h": [
+          150,
+          7
+        ]
+      },
+      "ETHUSDT": {
+        "1h": [
+          150,
+          7
+        ]
+      },
+      "BNBUSDT": {
+        "1h": [
+          150,
+          7
+        ]
+      }
+    },
+    "timestamp": "2025-07-04T11:06:18.853216"
+  },
+  "feature_engineering": {
+    "status": "success",
+    "feature_count": 0,
+    "train_shape": {
+      "BTCUSDT": {
+        "1h": [
+          120,
+          68
+        ]
+      },
+      "ETHUSDT": {
+        "1h": [
+          120,
+          68
+        ]
+      },
+      "BNBUSDT": {
+        "1h": [
+          120,
+          68
+        ]
+      }
+    },
+    "val_shape": {
+      "BTCUSDT": {
+        "1h": [
+          0,
+          0
+        ]
+      },
+      "ETHUSDT": {
+        "1h": [
+          0,
+          0
+        ]
+      },
+      "BNBUSDT": {
+        "1h": [
+          0,
+          0
+        ]
+      }
+    },
+    "test_shape": {
+      "BTCUSDT": {
+        "1h": [
+          30,
+          68
+        ]
+      },
+      "ETHUSDT": {
+        "1h": [
+          30,
+          68
+        ]
+      },
+      "BNBUSDT": {
+        "1h": [
+          30,
+          68
+        ]
+      }
+    },
+    "timestamp": "2025-07-04T11:06:19.166264"
+  },
+  "hyperparameter_tuning": {
+    "status": "failed",
+    "error": "tuple index out of range",
+    "timestamp": "2025-07-04T11:06:21.295219"
+  }
+}

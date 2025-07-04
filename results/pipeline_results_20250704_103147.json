@@ -1,0 +1,7 @@
+{
+  "data_preparation": {
+    "status": "failed",
+    "error": "division by zero",
+    "timestamp": "2025-07-04T10:31:47.060383"
+  }
+}
