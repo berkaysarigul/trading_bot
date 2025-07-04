@@ -249,7 +249,7 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için `LICENSE` dosy
 
 - **Issues**: GitHub Issues
 - **Discussions**: GitHub Discussions
-- **Email**: [your-email@example.com]
+- **Email**: [bsarigul453@gmail.com]
 
 ## 🙏 Teşekkürler
 
